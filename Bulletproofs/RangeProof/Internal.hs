@@ -207,6 +207,6 @@ computeLRCommitment n m aCommit sCommit t tBlinding mu x y z hs'
       hExp = (*) z <$> powerVector y nm
       hExp' j = (*) (z ^ (j+1)) <$> powerVector 2 n
       sliceHs' j = slice n j hs'
-      uChallenge = shamirU tBlinding mu t
-      u = uChallenge `mulP` g
+      uChallenge = shamirU tBlinding mu t -- zouyudi.20190705. Has calculated outside the func call.
+      u = uChallenge `mulP` g -- zouyudi.20190705. Has calculated outside the func call.
       nm = n * m

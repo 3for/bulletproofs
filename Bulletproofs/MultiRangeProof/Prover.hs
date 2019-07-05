@@ -104,7 +104,8 @@ generateProofUnsafe upperBound vsAndvBlindings = do
   unless (t == dot ls rs) $
     panic "Error on: t = dot l r"
 
-  unless (t1 == dot l1 r0 + dot l0 r1) $
+  -- unless (t1 == dot l1 r0 + dot l0 r1) $ --zouyudi.20190705.For more efficient calc.
+  unless (t1 == (dot (l0 ^+^ l1) (r0 ^+^ r1) - t0) - t2) $
     panic "Error on: t1 = dot l1 r0 + dot l0 r1"
 
   let tBlinding = sum (zipWith (\vBlindingF j -> (z ^ (j + 1)) * vBlindingF) vBlindingsF [1..m])
@@ -153,7 +154,7 @@ computeLRPolys
   -> LRPolys (PrimeField p)
 computeLRPolys n m aL aR sL sR y z
   = LRPolys
-        { l0 = aL ^-^ ((*) z <$> powerVector 1 nm)
+        { l0 = aL ^-^ (z1nm) --repeated calc.by zouyudi.20190705.
         , l1 = sL
         , r0 = (powerVector y nm `hadamardp` (aR ^+^ z1nm))
              ^+^ foldl' (\acc j -> iter j ^+^ acc) (replicate (fromIntegral nm) 0) [1..m]
