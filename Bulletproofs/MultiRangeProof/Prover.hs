@@ -1,4 +1,6 @@
 {-# LANGUAGE RecordWildCards, MultiWayIf, ScopedTypeVariables #-}
+{-# LANGUAGE NoImplicitPrelude #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 module Bulletproofs.MultiRangeProof.Prover (
   generateProof,

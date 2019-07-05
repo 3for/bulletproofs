@@ -1,4 +1,7 @@
 {-# LANGUAGE TypeFamilies #-}
+{-# LANGUAGE DataKinds #-}
+{-# LANGUAGE TypeSynonymInstances, FlexibleInstances #-}
+
 -- | Prime field with characteristic _q, over which the elliptic curve
 -- is defined and the other finite field extensions.
 --

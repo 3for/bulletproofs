@@ -1,4 +1,5 @@
 {-# LANGUAGE RecordWildCards, NamedFieldPuns, MultiWayIf, ScopedTypeVariables #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 
 module Bulletproofs.InnerProductProof.Verifier (
   verifyProof,
