@@ -91,11 +91,6 @@ generateProofUnsafe upperBound vsAndvBlindings = do
   t1Blinding <- genBlinding
   t2Blinding <- genBlinding
 
-  traceShow aBlinding (pure ()) -- zouyudi.20190710. debug info.
-  traceShow sBlinding (pure ())
-  traceShow t1Blinding (pure ())
-  traceShow t2Blinding (pure ())
-
   let t1Commit = commit t1 t1Blinding
       t2Commit = commit t2 t2Blinding
 
@@ -184,4 +179,6 @@ computeTPoly lrPoly@LRPolys{..}
   where
     t0 = dot l0 r0
     t2 = dot l1 r1
+
+
 

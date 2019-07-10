@@ -20,10 +20,6 @@ import qualified Bulletproofs.RangeProof as RP
 import qualified Bulletproofs.Utils as Utils
 import qualified Bulletproofs.Fq as Fq
 
-import Crypto.Number.Generate (generateMax)
-import PrimeField (PrimeField, toInt)
-
-
 main :: IO ()
 main = do
   let upperBound = 2 ^ (2 ^ 6)

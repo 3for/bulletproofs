@@ -7,5 +7,3 @@ bulletproofs.cabal
 *.prof
 *.prof.html
 Rangeproof
-.idea/
-/out/

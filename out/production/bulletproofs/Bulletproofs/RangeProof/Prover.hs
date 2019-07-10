@@ -1,5 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-
 module Bulletproofs.RangeProof.Prover (
   generateProof,
   generateProofUnsafe,

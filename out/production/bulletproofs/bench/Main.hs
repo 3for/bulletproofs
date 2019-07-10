@@ -29,7 +29,6 @@ prepareProof :: IO (Crypto.Point, RP.RangeProof Fq.Fq)
 prepareProof = do
   proofObj <- proof benchInput
   let cm = Utils.commit (fst benchInput) (snd benchInput)
-  print(cm) --zouyudi.20190710.
   pure (cm, proofObj)
 
 verify :: Crypto.Point -> RP.RangeProof Fq.Fq -> Bool
